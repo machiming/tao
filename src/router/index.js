@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Index from '../views/Index.vue'
 import Home from '../views/Home.vue'
-
+import page404 from '../views/error/404.vue'
 Vue.use(VueRouter);
 
 const routes = [
@@ -36,7 +36,20 @@ const routes = [
                 name: 'user',
                 component: () => import('../views/User.vue')
             },
+            {
+                path: '/cart',
+                name: 'cart',
+                component: () => import('../views/Cart.vue')
+            },
         ]
+    },{
+        path: "/404",
+        name:"404",
+        component: page404,
+    },{
+        path: "*",
+        redirect: '/404',
+        hidden:true
     }
 
 ];

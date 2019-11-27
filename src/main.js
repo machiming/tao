@@ -8,11 +8,14 @@ import './registerServiceWorker'
 import '@/assets/js/rem'
 import Router from 'vue-router'
 import '@/assets/css/iconfont/iconfont.css'
+import  Prism from 'prismjs'
+import 'prismjs/themes/prism.css'
 
 const originalPush = Router.prototype.push;
 Router.prototype.push = function push(location) {
     return originalPush.call(this, location).catch(err => err)
 };
+
 
 Vue.config.productionTip = false;
 Vue.use(Mint);
