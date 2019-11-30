@@ -5,27 +5,39 @@
 				<img style="width: 100%" :src="item.src">
 			</mt-swipe-item>
 		</mt-swipe>
+		<cate-nav></cate-nav>
 	</div>
 </template>
 <script>
+	import cateNav from "@/components/index/cateNav";
+
     export default ({
         data() {
             return {
-                swipeList:[
-	                {id:"1",link:"",src:"https://aecpm.alicdn.com/simba/img/TB1CWf9KpXXXXbuXpXXSutbFXXX.jpg_q50.jpg"},
-	                {id:"2",link:"",src:"https://img.alicdn.com/imgextra/i4/107/O1CN01aqqlkd1Cf2x4Ejo3q_!!107-0-luban.jpg"},
-	                {id:"3",link:"",src:"https://gw.alicdn.com/imgextra/i3/163/O1CN01JJA3Pc1D4h8CyRSId_!!163-0-lubanu.jpg"}
-                ],
-                value:"立即搜索"
+                swipeList: ''
             }
+        },
+	    components:{
+            cateNav
         },
         methods: {
             handleChange(index) {
+            
             }
+        },
+        mounted() {
+            var reg = /^(?:\/(?=$))?$/i;
+            console.log(reg.exec("1:2:3:4=5&1"));
+            this.json('swipeList').then(v => {
+                this.swipeList = v.data
+            });
         }
     })
 </script>
 <style lang="scss" scoped>
+	.home{
+		background: #f5f5f5;
+	}
 	.swiper {
 		height: 32vw
 	}

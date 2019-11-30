@@ -24,6 +24,7 @@
             }
         },
         mounted() {
+            console.log(Prism)
             Prism.highlightAll()
         }
     })

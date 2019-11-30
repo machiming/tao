@@ -8,8 +8,8 @@
 	</div>
 </template>
 <script>
-    import TabBar from "@/components/TabBar";
-    import HeadBar from "@/components/HeadBar";
+    import TabBar from "@/components/common/TabBar";
+    import HeadBar from "@/components/common/HeadBar";
 
     export default {
         name: 'home',

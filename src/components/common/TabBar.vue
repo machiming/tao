@@ -49,11 +49,11 @@
         },
         methods: {
             jump(page) {
-                router.push({path: page});
+                this.$router.push({path: page});
             }
         },
         mounted() {
-
+			
         },
         watch: {
             '$route'(to, from) {
